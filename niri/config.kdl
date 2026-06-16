@@ -6,15 +6,11 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
-environment {
-  QT_QPA_PLATFORM "wayland"
-  ELECTRON_OZONE_PLATFORM_HINT "auto"
-  QT_QPA_PLATFORMTHEME "qt6ct"
-  QT_QPA_PLATFORMTHEME_QT6 "qt6ct"
-}
 prefer-no-csd
 spawn-at-startup "dbus-update-activation-environment --all"
 spawn-at-startup "gnome-keyring-daemon --start --components=secrets"
+// Optional: Clipboard history
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 input {
     keyboard {
         xkb {
@@ -375,7 +371,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
+    match app-id=r#"^org\.kde\.kwalletmanager$"#
     block-out-from "screen-capture"
 
     // Use this instead if you want them visible on third-party screenshot tools.

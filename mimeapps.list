@@ -1,0 +1,11 @@
+[Added Associations]
+application/vnd.ms-publisher=org.kde.kate.desktop;
+application/x-zerosize=org.kde.kate.desktop;
+
+[Default Applications]
+application/vnd.ms-publisher=org.kde.kate.desktop;
+application/x-zerosize=org.kde.kate.desktop;
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+inode/directory=org.kde.dolphin.desktop
